@@ -1,0 +1,39 @@
+SISTEMA CONTROL DE VISITAS JFD - GUÍA RÁPIDA
+
+1) BASE DE DATOS LOCAL
+- Cree una base llamada control_visitas.
+- Para instalación nueva importe: sql/control_visitas.sql
+- Si viene de la versión anterior, haga respaldo e importe: sql/ACTUALIZAR_DESDE_VERSION_ANTERIOR.sql
+
+2) CREDENCIALES INICIALES
+Administrador: admin / admin123
+Guardia: guardia / guardia1
+
+3) GITHUB
+- Descomprima el sistema.
+- Abra la carpeta en VS Code.
+- git init
+- git add .
+- git commit -m "Sistema Control de Visitas JFD"
+- git branch -M main
+- git remote add origin URL_DEL_REPOSITORIO
+- git push -u origin main
+
+4) RAILWAY
+- New Project > Deploy from GitHub Repo.
+- Agregue MySQL al mismo proyecto.
+- En el servicio PHP agregue referencias a MYSQLHOST, MYSQLPORT, MYSQLUSER, MYSQLPASSWORD y MYSQLDATABASE del servicio MySQL.
+- Importe el SQL a la base MySQL de Railway.
+- Genere el dominio público del servicio PHP.
+
+5) FLUJO QR
+- Los 10 QR iniciales son reutilizables.
+- El administrador puede generar, editar, activar/desactivar e imprimir más QR.
+- El guardia asigna un QR disponible al registrar la visita.
+- El escáner SOLO registra la ENTRADA.
+- Para la SALIDA: Personas en el instituto > Ya salió.
+- Al marcar Ya salió, el QR vuelve a Disponible para otra visita.
+
+6) IMPRESIÓN DE QR
+- Admin > Códigos QR > Imprimir QR (7 × 9 cm).
+- En el diálogo de impresión use escala 100 % / tamaño real.
