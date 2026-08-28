@@ -1,0 +1,27 @@
+SISTEMA CONTROL DE VISITAS JFD — LISTO PARA GITHUB + RAILWAY
+
+IMPORTANTE:
+Todos los archivos de esta carpeta forman la RAIZ del repositorio.
+En GitHub deben verse directamente: Dockerfile, railway.json, index.php, db.php, admin/, guardia/, sql/, etc.
+NO debe existir una carpeta adicional como "Sistema Control Visitas/" por encima de esos archivos.
+
+PASOS RAPIDOS:
+1) Descomprimir este ZIP.
+2) Abrir la carpeta Sistema_Control_Visitas_JFD_RAILWAY_LISTO.
+3) En GitHub > Add file > Upload files, arrastrar TODO EL CONTENIDO que está dentro de esta carpeta, NO la carpeta contenedora.
+4) Confirmar que Dockerfile y railway.json se ven en la página principal del repositorio.
+5) Railway > New Project > Deploy from GitHub repo.
+6) El build debe indicar que usa Dockerfile. railway.json fuerza builder DOCKERFILE y dockerfilePath Dockerfile.
+7) Añadir MySQL al mismo proyecto.
+8) En el servicio PHP añadir las variables de referencia:
+   MYSQLHOST=${{MySQL.MYSQLHOST}}
+   MYSQLPORT=${{MySQL.MYSQLPORT}}
+   MYSQLUSER=${{MySQL.MYSQLUSER}}
+   MYSQLPASSWORD=${{MySQL.MYSQLPASSWORD}}
+   MYSQLDATABASE=${{MySQL.MYSQLDATABASE}}
+9) Para una base nueva importar sql/control_visitas.sql.
+10) Generar dominio en Settings > Networking.
+
+CREDENCIALES INICIALES:
+Admin: admin / admin123
+Guardia: guardia / guardia1
